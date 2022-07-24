@@ -10,12 +10,16 @@ class RegisterController extends Controller
 {
 public function register(Request $request){
 
-User::create([
+$user=User::create([
 'email'=>$request->email,
 'password'=>Hash::make($request->password)
 
 ]);
-return back() ->with('success','User has been created succesfully');
+if($user){
+    return redirect()->route('welcome');
 
+}}
+public function index(){
+    return view('register');
 }
 }

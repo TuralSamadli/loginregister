@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('welcome')->name('welcome');
 });
 // Route::get('/login', function () {
 //     return view('login');
@@ -22,5 +22,7 @@ Route::get('/', function () {
 // Route::get('/login', function () {
 //     return view('register');
 // });
-Route::get('/register',[\App\Http\Controllers\RegisterController::class, 'register'])->name('register');
-Route::get('/login',[\App\Http\Controllers\LoginController::class, 'login'])->name('login');
+Route::post('/register',[\App\Http\Controllers\RegisterController::class, 'register'])->name('register');
+Route::post('/login',[\App\Http\Controllers\LoginController::class, 'login'])->name('login');
+Route::get('/register',[\App\Http\Controllers\RegisterController::class,'index'])->name('register.index');
+Route::get('/register',[\App\Http\Controllers\LoginController::class,'LoginView'])->name('login.index');

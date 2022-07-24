@@ -15,4 +15,7 @@ return redirect()-> route('welcome');
     }
     return back()-> with('error','Your credentials are incorrect');
 }
+public function Loginview(){
+    return view('welcome');
+}
 }
