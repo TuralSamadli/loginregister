@@ -11,6 +11,7 @@
 </head>
 <body>
   <form method="POST" action="{{ route('register') }}" class="form pt-3">
+    @csrf
     <div class="container">
       <h1>Register</h1>
       <p>Please fill in this form to create an account.</p>
@@ -21,6 +22,12 @@
   
       <label for="psw"><b>Password</b></label>
       <input type="password" placeholder="Enter Password" name="psw" id="psw" required>
+      <label for="name"><b>Name</b></label>
+      <input type="text" placeholder="Enter Your Name" name="name" id="name" required>
+      <label for="surname"><b>Surname</b></label>
+      <input type="text" placeholder="Enter Your Surname " name="surname" id="surname" required>
+      <label for="age"><b>Age</b></label>
+      <input type="number" placeholder="Enter  Your Age" name="age" id="age" required>
   
       
   
